@@ -1,0 +1,18 @@
+
+CC = g++
+OUTPUT = program
+
+
+OBJECTS = program.o swap.o
+
+
+%.o: %.cpp
+	$(CC) -c $< -o $@
+
+
+$(OUTPUT): $(OBJECTS)
+	$(CC) $(OBJECTS) -o $(OUTPUT)
+
+
+clean:
+	rm -f $(OBJECTS) $(OUTPUT)
